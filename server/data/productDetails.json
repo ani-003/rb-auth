@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "pc",
+    "price": 65000,
+    "isPublic": true,
+    "createdBy": "seller@email.com"
+  },
+  {
+    "id": 2,
+    "name": "speaker",
+    "price": 5000,
+    "isPublic": false,
+    "createdBy": "admin@email.com"
+  },
+  {
+    "id": 3,
+    "name": "printer",
+    "price": 4660,
+    "isPublic": true,
+    "createdBy": "seller@email.com"
+  },
+  {
+    "id": 4,
+    "name": "phone",
+    "price": 11000,
+    "isPublic": false,
+    "createdBy": "seller@email.com"
+  },
+  {
+    "id": 5,
+    "name": "fridge",
+    "price": 10000,
+    "isPublic": true,
+    "createdBy": "admin@email.com"
+  },
+  {
+    "id": 6,
+    "name": "tv",
+    "price": 25000,
+    "isPublic": false,
+    "createdBy": "seller@email.com"
+  },
+  {
+    "id": 7,
+    "name": "radio",
+    "price": 2500,
+    "isPublic": true,
+    "createdBy": "seller@email.com"
+  },
+  {
+    "id": 8,
+    "name": "marker",
+    "price": 200,
+    "isPublic": true,
+    "createdBy": "admin@email.com"
+  },
+  {
+    "id": 9,
+    "name": "tape",
+    "price": 200,
+    "isPublic": false,
+    "createdBy": "admin@email.com"
+  }
+]
