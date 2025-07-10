@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import LogoutButton from './Logout'
 import AddProductForm from './AddProductForm'
+import { jwtDecode } from 'jwt-decode'
 
 const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+const { role } = jwtDecode(token)
 
 const Login = () => {
   const [logEmail, setEmail] = useState('')
@@ -79,6 +82,7 @@ const Login = () => {
       </form>
     ) : (
       <div style={styles.form}>
+        <h2>Welcome, {role}!</h2>
         <button onClick={handleGetData} style={styles.button}>
           Get Products
         </button>
