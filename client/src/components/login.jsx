@@ -15,7 +15,6 @@ const Login = () => {
   const [products, setProducts] = useState([])
   const [token, setToken] = useState(localStorage.getItem('token'))
 
-  const { role } = jwtDecode(token)
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -58,6 +57,15 @@ const Login = () => {
     }
   }
 
+const getRole = () => {
+  try {
+    return jwtDecode(token).role
+  } catch {
+    return ''
+  }
+}
+
+
   return (
   <div style={styles.container}>
     {!token ? (
@@ -84,7 +92,8 @@ const Login = () => {
       </form>
     ) : (
       <div style={styles.form}>
-        <h2>Welcome, {role}!</h2>
+       <h2>Welcome, {getRole()}!</h2>
+
         <button onClick={handleGetData} style={styles.button}>
           Get Products
         </button>
