@@ -54,7 +54,8 @@ const Login = () => {
   }
 
   return (
-    <div style={styles.container}>
+  <div style={styles.container}>
+    {!token ? (
       <form onSubmit={handleLogin} style={styles.form}>
         <h2>Login</h2>
         <input
@@ -74,10 +75,13 @@ const Login = () => {
           required
         />
         <button type='submit' style={styles.button}>Login</button>
-        <button type='button' onClick={handleGetData} style={styles.button}>
+        {message && <p style={styles.message}>{message}</p>}
+      </form>
+    ) : (
+      <div style={styles.form}>
+        <button onClick={handleGetData} style={styles.button}>
           Get Products
         </button>
-        {message && <p style={styles.message}>{message}</p>}
         {products.length > 0 && (
           <div style={styles.productsBox}>
             <h3>Fetched Products:</h3>
@@ -91,10 +95,12 @@ const Login = () => {
           </div>
         )}
         <LogoutButton />
-      </form>
-      {token && <AddProductForm token={token} />}
-    </div>
-  )
+        <AddProductForm token={token} />
+      </div>
+    )}
+  </div>
+)
+
 }
 
 const styles = {
