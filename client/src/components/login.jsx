@@ -6,7 +6,7 @@ import { jwtDecode } from 'jwt-decode'
 
 const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-const { role } = jwtDecode(token)
+
 
 const Login = () => {
   const [logEmail, setEmail] = useState('')
@@ -14,6 +14,8 @@ const Login = () => {
   const [message, setMessage] = useState('')
   const [products, setProducts] = useState([])
   const [token, setToken] = useState(localStorage.getItem('token'))
+
+  const { role } = jwtDecode(token)
 
   const handleLogin = async (e) => {
     e.preventDefault()
